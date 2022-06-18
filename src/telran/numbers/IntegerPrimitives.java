@@ -21,8 +21,7 @@ public class IntegerPrimitives {
 	public static char getMaxChar() {
 		char res = 1;
 		while (res > 0) {
-			res = (char) (res * 2);
-
+			res *= 2;
 		}
 		return (char) (res - 1);
 	}
@@ -38,7 +37,7 @@ public class IntegerPrimitives {
 	public static short getMaxShort() {
 		short res = 1;
 		while (res > 0) {
-			res = (short) (res * 2);
+			res *= 2;
 		}
 		return (short) (res - 1);
 	}
@@ -87,5 +86,4 @@ public class IntegerPrimitives {
 		int exp = (int) ((Math.log(x) + 1) / Math.log(2));
 		return exp / 8;
 	}
-
 }
