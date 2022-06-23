@@ -8,7 +8,7 @@ public class SportLotoAppl {
 
 	public static void main(String[] args) {
 		for (int i = 0; i < 7; i++) {
-			System.out.printf(getRandomNumber(1,49)+" ");
+			System.out.printf(getRandomNumber(1,49)+" "); //bug there may be repeated numbers
 		}
 
 	}
