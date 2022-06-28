@@ -14,6 +14,7 @@ public class TictactoeGame {
         int res = 0;
         boolean curRow = false, curCol = false;
         int curDiagonal = 1;
+        int draw = 0;
         if (matrix[nRow][nCol] == 'X' || matrix[nRow][nCol] == '0') {
             System.out.println("Wrong sell");
             return -1;
@@ -24,11 +25,12 @@ public class TictactoeGame {
                 curRow = matrix[i][j - 1] == matrix[i][j] && matrix[i][j] != 0;
                 curCol = transposedMatrix[i][j - 1] == transposedMatrix[i][j] && transposedMatrix[i][j] != 0;
                 if ((i == j || i + j + 1 == matrix.length) && matrix[i][j] == symb) curDiagonal++;
+                draw++;
             }
             if (curRow || curCol || curDiagonal == 3) {
                 res = 1;
                 break;
-            }
+            } else if (draw == Math.pow(matrix.length, 2)) res = 2;
         }
         return res;
     }
