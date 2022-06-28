@@ -18,23 +18,14 @@ public class TictactoeGame {
             System.out.println("Wrong sell");
             return -1;
         } else matrix[nRow][nCol] = symb;
-
+        char[][] transposedMatrix = transposition(matrix);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 1; j < matrix[i].length; j++) {
                 curRow = matrix[i][j - 1] == matrix[i][j] && matrix[i][j] != 0;
+                curCol = transposedMatrix[i][j - 1] == transposedMatrix[i][j] && transposedMatrix[i][j] != 0;
                 if ((i == j || i + j + 1 == matrix.length) && matrix[i][j] == symb) curDiagonal++;
             }
-            if (curRow || curDiagonal == 3) {
-                res = 1;
-                break;
-            }
-        }
-        char[][] transposedMatrix = transposition(matrix);
-        for (int i = 0; i < transposedMatrix.length; i++) {
-            for (int j = 1; j < transposedMatrix[i].length; j++) {
-                curCol = transposedMatrix[i][j - 1] == transposedMatrix[i][j] && transposedMatrix[i][j] != 0;
-            }
-            if (curCol) {
+            if (curRow || curCol || curDiagonal == 3) {
                 res = 1;
                 break;
             }
