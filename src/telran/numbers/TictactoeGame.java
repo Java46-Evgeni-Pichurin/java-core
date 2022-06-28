@@ -29,10 +29,10 @@ public class TictactoeGame {
                 break;
             }
         }
-        char[][] transposeMatrix = transposition(matrix);
-        for (int i = 0; i < transposeMatrix.length; i++) {
-            for (int j = 1; j < transposeMatrix[i].length; j++) {
-                curCol = transposeMatrix[i][j - 1] == transposeMatrix[i][j] && transposeMatrix[i][j] != 0;
+        char[][] transposedMatrix = transposition(matrix);
+        for (int i = 0; i < transposedMatrix.length; i++) {
+            for (int j = 1; j < transposedMatrix[i].length; j++) {
+                curCol = transposedMatrix[i][j - 1] == transposedMatrix[i][j] && transposedMatrix[i][j] != 0;
             }
             if (curCol) {
                 res = 1;
