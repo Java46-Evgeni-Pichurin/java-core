@@ -65,7 +65,7 @@ public class TictactoeGame {
         int input = scan.nextInt();
         if (input >= length || input < 0) {
             System.out.println("Wrong sell");
-            getRowAndCol(length, sell);
+            return getRowAndCol(length, sell);
         }
         return input;
     }
