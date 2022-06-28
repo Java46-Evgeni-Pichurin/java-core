@@ -32,7 +32,7 @@ public class TictactoeGame {
         char[][] transposeMatrix = transposition(matrix);
         for (int i = 0; i < transposeMatrix.length; i++) {
             for (int j = 1; j < transposeMatrix[i].length; j++) {
-                curCol = matrix[i][j - 1] == matrix[i][j] && matrix[i][j] != 0;
+                curCol = transposeMatrix[i][j - 1] == transposeMatrix[i][j] && transposeMatrix[i][j] != 0;
             }
             if (curCol) {
                 res = 1;
