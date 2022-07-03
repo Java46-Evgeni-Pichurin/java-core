@@ -33,4 +33,17 @@ public class Strings {
         }
         return Arrays.equals(helperArrForStr1, helperArrForStr2);
     }
+
+/*****************************************************************************
+                   Additional implementation of the method
+ *****************************************************************************/
+//    public static boolean isAnagram(String str1, String str2) {
+//        if (str1.length() != str2.length()) {
+//            return false;
+//        }
+//        str1 = str1.toLowerCase();
+//        str2 = str2.toLowerCase();
+//        int[] resArr = deepNoRepeatedCompare(str1, str2);
+//        return resArr[0] + resArr[1] == str1.length();
+//    }
 }
