@@ -2,18 +2,19 @@ package telran.text;
 
 public class Strings {
 
-    private static final int LAST_INDEX_OF_ALPHABET_FROM_ASCII = 123;
+    private static final int LAST_INDEX_OF_ASCII = 122;
+    private static final int FIRST_INDEX_OF_ASCII = 97;
 
     public static int[] deepNoRepeatedCompare(String str1, String str2) {
         int[] arrayRes = {0, 0};
-        char[] arrayOfSymbolsFromFirstParam = new char[LAST_INDEX_OF_ALPHABET_FROM_ASCII];
+        char[] arrayOfSymbolsFromFirstParam = new char[LAST_INDEX_OF_ASCII - FIRST_INDEX_OF_ASCII + 1];
         for (int i = 0; i < str1.length(); i++) {
-            arrayOfSymbolsFromFirstParam[str1.charAt(i)] = str1.charAt(i);
+            arrayOfSymbolsFromFirstParam[str1.charAt(i) - FIRST_INDEX_OF_ASCII] = str1.charAt(i);
         }
         for (int i = 0; i < str2.length(); i++) {
             if (i < str1.length() && str1.charAt(i) == str2.charAt(i)) {
                 arrayRes[0]++;
-            } else if (arrayOfSymbolsFromFirstParam[str2.charAt(i)] == str2.charAt(i)) {
+            } else if (arrayOfSymbolsFromFirstParam[str2.charAt(i) - FIRST_INDEX_OF_ASCII] == str2.charAt(i)) {
                 arrayRes[1]++;
             }
         }
