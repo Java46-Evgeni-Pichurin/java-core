@@ -27,14 +27,18 @@ class StringsClassTests {
 	
 	@Test
 	void isAnagramTests() {
-		String str1 = "Hello";
-		String str2 = "Helll";
+		String str1 = "hello";
+		String str2 = "Hello";
 		String str3 = "eloHl";
 		String str4 = "Helo";
+		String str5 = "hhhhhqqqy";
+		String str6 = "qhhqqhhhi";
+		assertTrue(Strings.isAnagram(str1, str2));
 		assertTrue(Strings.isAnagram(str1, str3));
-		assertFalse(Strings.isAnagram(str1, str2));
 		assertFalse(Strings.isAnagram(str1, str4));
 		assertTrue(Strings.isAnagram(str1, str1));
+		assertFalse(Strings.isAnagram(str1, str5));
+		assertFalse(Strings.isAnagram(str6, str5));
 	}
 
 }

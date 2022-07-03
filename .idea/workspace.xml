@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0541dbf7-bc7d-403c-b2cb-f3a0d04a6de9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/strings.iml" afterDir="false" />
+    <list default="true" id="0541dbf7-bc7d-403c-b2cb-f3a0d04a6de9" name="Changes" comment="HW-06">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/telran/text/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/text/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/telran/text/tests/StringsClassTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/text/tests/StringsClassTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +12,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -34,7 +36,8 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/evgeni.p/Desktop/Code/strings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -122,9 +125,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.StringsClassTests" />
-        <item itemvalue="JUnit.StringsClassTests.isAnagramTests" />
-        <item itemvalue="Application.Strings" />
         <item itemvalue="JUnit.StringsClassTests.deepCompareTest" />
+        <item itemvalue="Application.Strings" />
+        <item itemvalue="JUnit.StringsClassTests.isAnagramTests" />
         <item itemvalue="JUnit.StringsStandardTests.comparingStrings" />
       </list>
     </recent_temporary>
@@ -137,8 +140,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656827647930</updated>
-      <workItem from="1656827649758" duration="6643000" />
+      <workItem from="1656827649758" duration="8097000" />
+      <workItem from="1656836674518" duration="2477000" />
+      <workItem from="1656842395688" duration="135000" />
+      <workItem from="1656843746002" duration="2780000" />
     </task>
+    <task id="LOCAL‎00001" summary="HW-06">
+      <created>1656834807226</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1656834807226</updated>
+    </task>
+    <task id="LOCAL‎00002" summary="HW-06">
+      <created>1656834904134</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1656834904134</updated>
+    </task>
+    <task id="LOCAL‎00003" summary="HW-06">
+      <created>1656837355793</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1656837355793</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,10 +174,31 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HW-06" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="HW-06" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-06" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/strings$StringsClassTests_isAnagramTests.ic" NAME="StringsClassTests.isAnagramTests Coverage Results" MODIFIED="1656839305295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>telran.text.tests.*</FILTER>
+    </SUITE>
   </component>
 </project>
