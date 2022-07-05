@@ -1,7 +1,6 @@
 package telran.text;
 
 import java.util.Arrays;
-
 public class Strings {
     private static final int NUMBER_OF_OPTIONS = 1000;
 
