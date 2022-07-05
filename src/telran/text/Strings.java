@@ -40,8 +40,7 @@ public class Strings {
                 numbers[i]--;
             }
         }
-        String res = builder.toString();
         System.out.println("Before sorting = " + Arrays.toString(strNumbers));
-        System.out.println("After sorting = " + Arrays.toString(new String[]{res.substring(0, res.length() - 2)}));
+        System.out.println("After sorting = " + Arrays.toString(new String[]{builder.substring(0, builder.length() - 2)}));
     }
 }
