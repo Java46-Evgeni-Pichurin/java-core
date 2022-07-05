@@ -31,7 +31,7 @@ public class Strings {
     static public void sortStringsAsNumbers(String[] strNumbers) {
         int[] numbers = new int[NUMBER_OF_OPTIONS];
         for (int i = 0; i < strNumbers.length; i++) {
-            numbers[Integer.parseInt(strNumbers[i].trim())]++ ;
+            numbers[Integer.parseInt(strNumbers[i])]++ ;
         }
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < numbers.length; i++) {
