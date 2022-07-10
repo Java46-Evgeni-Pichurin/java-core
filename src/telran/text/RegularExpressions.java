@@ -16,7 +16,7 @@ public class RegularExpressions {
     }
 
     public static String arithmeticExpression() {
-        String operand = "(\\d+|\\d+\\.\\d+)" +
+        String operand = "(\\d+\\.\\d+|\\d+)" +
                 "|[a-zA-Z$][\\w$]*|_[\\w$]+";
         String operators = "([\\/*+-])";
         String expression = String.format("(%s)(%s)",operand,operators);
