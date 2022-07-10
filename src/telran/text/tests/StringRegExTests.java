@@ -43,9 +43,9 @@ class StringRegExTests {
 	@Test
 	void ArithmeticExpressionTrue() {
 		assertTrue(isArithmeticExpression("22+33"));
-		assertTrue(isArithmeticExpression("1 + 2 -(a*7)/ C"));
+		assertTrue(isArithmeticExpression("1 + 2 -(a*7+ C3)"));
 		assertTrue(isArithmeticExpression("1 + 2 -(a*7)/ 7"));
-		assertTrue(isArithmeticExpression("(1 + 2 -(a*      7)/ $)"));
+		assertTrue(isArithmeticExpression("(1 + 2 -(a*      7)/ $H)"));
 	}
 	@Test
 	void ArithmeticExpressionFalse() {
