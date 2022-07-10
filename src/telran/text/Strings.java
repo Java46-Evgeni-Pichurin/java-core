@@ -17,7 +17,6 @@ public class Strings {
             return false;
         }
         expression = removeSpacesAndParentheses(expression);;
-        System.out.println(expression);
         return expression.matches(arithmeticExpression());
     }
 
