@@ -58,7 +58,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestClasses.personTest">
+  <component name="RunManager" selected="JUnit.TestClasses">
     <configuration name="TestClasses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HW-09" />
       <option name="PACKAGE_NAME" value="" />
@@ -110,9 +110,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestClasses" />
         <item itemvalue="JUnit.TestClasses.personTest" />
         <item itemvalue="JUnit.TestClasses.SalesPersonTest" />
-        <item itemvalue="JUnit.TestClasses" />
         <item itemvalue="JUnit.TestClasses.WageEmployeeTest" />
         <item itemvalue="JUnit.TestClasses.EmployeeTest" />
       </list>

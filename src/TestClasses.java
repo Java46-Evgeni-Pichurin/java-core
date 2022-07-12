@@ -1,9 +1,9 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import classes.Employee;
-import classes.Person;
-import classes.SalesPerson;
-import classes.WageEmployee;
+import telran.people.Employee;
+import telran.people.Person;
+import telran.people.SalesPerson;
+import telran.people.WageEmployee;
 import org.junit.jupiter.api.Test;
 
 class TestClasses {

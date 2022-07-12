@@ -1,4 +1,4 @@
-package classes;
+package telran.people;
 
 public class Person {
     private static final String EMAIL_REGEX = "^[\\w\\-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";

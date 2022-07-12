@@ -1,4 +1,4 @@
-package classes;
+package telran.people;
 
 public class SalesPerson extends Employee {
     private int sales;
