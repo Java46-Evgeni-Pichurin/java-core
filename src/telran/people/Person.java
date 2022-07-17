@@ -10,7 +10,7 @@ public class Person {
     public Person(long id, int birthYear, String email) {
         this.id = id;
         this.birthYear = birthYear;
-        this.email = emailValidator(email);
+        setEmail(email);
     }
 
     public void setEmail(String email) {

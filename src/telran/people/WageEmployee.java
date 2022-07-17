@@ -6,8 +6,8 @@ public class WageEmployee extends Employee {
 
     public WageEmployee(long id, int birthYear, String email, int basicSalary, int wage, int hours) {
         super(id, birthYear, email, basicSalary);
-        this.wage = Math.abs(wage);
-        this.hours = Math.abs(hours);
+        setWage(wage);
+        setHours(hours);
     }
 
     public void setWage(int wage) {

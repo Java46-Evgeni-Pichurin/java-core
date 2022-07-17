@@ -6,8 +6,8 @@ public class SalesPerson extends Employee {
 
     public SalesPerson(long id, int birthYear, String email, int basicSalary, int sales, int percentPay) {
         super(id, birthYear, email, basicSalary);
-        this.sales = Math.abs(sales);
-        this.percentPay = Math.abs(percentPay);
+        setSales(sales);
+        setPercentPay(percentPay);
     }
 
     public void setSales(int sales) {
