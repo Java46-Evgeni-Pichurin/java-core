@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="59581cdf-5cb5-4c63-9543-af3d1d0045ad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW-12.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/CompanyArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/CompanySortedArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/ICompany.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/test/CompanyTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/test/SalaryRangePredicate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/test/SalesPersonPredicate.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CTMEdDAHXZkWr6MCtjZV6ZkzTX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src\telran\people\test" />
+      <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src\telran\people" />
+      <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src\telran" />
+      <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PersonEmployeeTests">
+    <configuration name="CompanyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="telran.people.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="telran.people.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.people.test.CompanyTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompanyTests.testAddEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="telran.people.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="telran.people.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.people.test.CompanyTests" />
+      <option name="METHOD_NAME" value="testAddEmployee" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonEmployeeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="telran.people.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="telran.people.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.people.test.PersonEmployeeTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PersonEmployeeTests" />
+        <item itemvalue="JUnit.CompanyTests" />
+        <item itemvalue="JUnit.CompanyTests.testAddEmployee" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59581cdf-5cb5-4c63-9543-af3d1d0045ad" name="Changes" comment="" />
+      <created>1658822012770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658822012770</updated>
+      <workItem from="1658822014488" duration="1283000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
