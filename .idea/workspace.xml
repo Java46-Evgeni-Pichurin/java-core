@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59581cdf-5cb5-4c63-9543-af3d1d0045ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW-12.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/people/CompanyArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/people/CompanySortedArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/people/ICompany.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/people/test/CompanyTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/people/test/SalaryRangePredicate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/people/test/SalesPersonPredicate.java" afterDir="false" />
+    <list default="true" id="59581cdf-5cb5-4c63-9543-af3d1d0045ad" name="Changes" comment="HW-12">
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/numbers/EvenNumbersPredicate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/numbers/Range$RangeIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/numbers/Range.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/numbers/test/RangeTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/CompanyArray$CompanyIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/CompanyArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/CompanySortedArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/ICompany.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/Person.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/SalesPerson.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/WageEmployee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/comparators/EmployeeSalaryComparator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/comparators/PersonAgeComparator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/test/CompanyTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/test/PersonEmployeeTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/test/SalaryRangePredicate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/people/test/SalesPersonPredicate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/text/Strings.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/text/comparators/StringsComparator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HW-12/telran/text/test/StringsTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/numbers/EvenNumbersPredicate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/numbers/OddNumbersPredicate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/numbers/Range.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/numbers/test/RangeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/SalesPerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/WageEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/comparators/EmployeeSalaryComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/comparators/PersonAgeComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/people/test/PersonEmployeeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/text/Strings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/text/comparators/StringsComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/telran/text/test/StringsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/telran/people/CompanyArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/people/CompanyArray.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,77 +63,113 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src\telran\people\test" />
       <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src\telran\people" />
+      <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src\telran\people\test" />
       <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src\telran" />
       <recent name="C:\Users\evgeni.p\Desktop\Code\HW-12\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonEmployeeTests">
-    <configuration name="CompanyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RangeTest">
+    <configuration name="RangeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HW-12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="telran.people.test.*" />
+          <option name="PATTERN" value="telran.numbers.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="telran.people.test" />
-      <option name="MAIN_CLASS_NAME" value="telran.people.test.CompanyTests" />
+      <option name="PACKAGE_NAME" value="telran.numbers.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.numbers.test.RangeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompanyTests.testAddEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RangeTest.iterableNoPredicateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HW-12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="telran.people.test.*" />
+          <option name="PATTERN" value="telran.numbers.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="telran.people.test" />
-      <option name="MAIN_CLASS_NAME" value="telran.people.test.CompanyTests" />
-      <option name="METHOD_NAME" value="testAddEmployee" />
+      <option name="PACKAGE_NAME" value="telran.numbers.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.numbers.test.RangeTest" />
+      <option name="METHOD_NAME" value="iterableNoPredicateTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonEmployeeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RangeTest.iterablePredicateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HW-12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="telran.people.test.*" />
+          <option name="PATTERN" value="telran.numbers.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="telran.people.test" />
-      <option name="MAIN_CLASS_NAME" value="telran.people.test.PersonEmployeeTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="telran.numbers.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.numbers.test.RangeTest" />
+      <option name="METHOD_NAME" value="iterablePredicateTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RangeTest.iterablePredicateTest_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="telran.numbers.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="telran.numbers.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.numbers.test.RangeTest" />
+      <option name="METHOD_NAME" value="iterablePredicateTest_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RangeTest.iterablePredicateTest_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="telran.numbers.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="telran.numbers.test" />
+      <option name="MAIN_CLASS_NAME" value="telran.numbers.test.RangeTest" />
+      <option name="METHOD_NAME" value="iterablePredicateTest_2" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonEmployeeTests" />
-        <item itemvalue="JUnit.CompanyTests" />
-        <item itemvalue="JUnit.CompanyTests.testAddEmployee" />
+        <item itemvalue="JUnit.RangeTest" />
+        <item itemvalue="JUnit.RangeTest.iterablePredicateTest_1" />
+        <item itemvalue="JUnit.RangeTest.iterablePredicateTest_2" />
+        <item itemvalue="JUnit.RangeTest.iterablePredicateTest" />
+        <item itemvalue="JUnit.RangeTest.iterableNoPredicateTest" />
       </list>
     </recent_temporary>
   </component>
@@ -121,8 +181,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658822012770</updated>
-      <workItem from="1658822014488" duration="1283000" />
+      <workItem from="1658822014488" duration="12332000" />
+      <workItem from="1658834908837" duration="2124000" />
     </task>
+    <task id="LOCAL‎00001" summary="HW-12">
+      <created>1658823736762</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1658823736762</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,5 +206,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="HW-12" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-12" />
   </component>
 </project>
