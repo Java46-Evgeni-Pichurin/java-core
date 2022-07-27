@@ -5,11 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import telran.numbers.EvenNumbersPredicate;
-import telran.numbers.OddNumbersPredicate;
+import telran.numbers.predicates.EvenNumbersPredicate;
+import telran.numbers.predicates.OddNumbersPredicate;
 import telran.numbers.Range;
-
-import java.util.Arrays;
 
 class RangeTest {
     Range range = new Range(-2, 5);

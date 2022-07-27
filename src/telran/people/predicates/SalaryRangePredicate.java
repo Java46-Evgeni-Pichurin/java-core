@@ -1,4 +1,4 @@
-package telran.people.test;
+package telran.people.predicates;
 
 import java.util.function.Predicate;
 
