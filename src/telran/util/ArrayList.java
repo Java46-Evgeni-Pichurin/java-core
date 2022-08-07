@@ -152,21 +152,6 @@ public class ArrayList<T> implements List<T> {
 
         return checkExistingIndex(index) ? array[index] : null;
     }
-
-    //    @Override
-//    public boolean removeIf(Predicate<T> predicate) {
-//        int oldSize = size();
-//        int index = 0;
-//        while (index < size()) {
-//            if (predicate.test(get(index))) {
-//                removeByIndex(index);
-//                index = 0;
-//            } else {
-//                index++;
-//            }
-//        }
-//        return oldSize > size();
-//    }
     @Override
     public boolean removeIf(Predicate<T> predicate) {
         int oldSize = size();
