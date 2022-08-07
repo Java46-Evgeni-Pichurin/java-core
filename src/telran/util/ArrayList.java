@@ -166,7 +166,6 @@ public class ArrayList<T> implements List<T> {
             }
         }
         System.arraycopy(array, 0, array, 0, oldSize - matchingElements);
-        System.out.println(Arrays.toString(array));
         return oldSize > size();
     }
 }
