@@ -156,16 +156,17 @@ public class ArrayList<T> implements List<T> {
     public boolean removeIf(Predicate<T> predicate) {
         int oldSize = size();
         int matchingElements = 0;
-        for (int i = 0; i < oldSize; i++) {
+        for (int i = 0; i <= oldSize; i++) {
             if (predicate.test(get(i))) {
                 array[i] = null;
-                T tmp = array[oldSize - 1];
-                array[oldSize - 1] = array[i];
-                array[i] = tmp;
                 matchingElements++;
+                T tmp = array[i + 1];
+                array[i + 1] = null;
+                array[i] = tmp;
             }
         }
-        System.arraycopy(array, 0, array, 0, oldSize - matchingElements);
+        System.arraycopy(array, 0, array, 0, matchingElements);
+        System.out.println(Arrays.toString(array));
         return oldSize > size();
     }
 }

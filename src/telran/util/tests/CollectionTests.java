@@ -120,5 +120,4 @@ abstract class CollectionTests {
 		}
 		assertTrue(flException);
 	}
-
 }
