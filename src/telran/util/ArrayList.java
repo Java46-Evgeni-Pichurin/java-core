@@ -165,7 +165,7 @@ public class ArrayList<T> implements List<T> {
                 array[i] = tmp;
             }
         }
-        System.arraycopy(array, 0, array, 0, matchingElements);
+        System.arraycopy(array, 0, array, 0, oldSize - matchingElements);
         System.out.println(Arrays.toString(array));
         return oldSize > size();
     }
