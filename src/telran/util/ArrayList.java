@@ -156,7 +156,7 @@ public class ArrayList<T> implements List<T> {
     public boolean removeIf(Predicate<T> predicate) {
         int oldSize = size();
         int matchingElements = 0;
-        for (int i = 0; i <= oldSize; i++) {
+        for (int i = 0; i < oldSize; i++) {
             if (predicate.test(get(i))) {
                 array[i] = null;
                 matchingElements++;
