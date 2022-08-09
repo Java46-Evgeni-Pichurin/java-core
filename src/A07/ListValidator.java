@@ -35,7 +35,7 @@ public class ListValidator {
             tmp = tmp.next;
         } while (tmp != detectedNodeInLoop);
 
-        // Come back references to head and shift N elements for detectedNode
+        // Coming back references to head and shift N elements for detectedNode
         tmp = head;
         detectedNodeInLoop = head;
         while (elementsInLoop > 0) {
