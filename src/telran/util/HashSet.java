@@ -27,18 +27,19 @@ public class HashSet<T> implements Set<T> {
     private class HashSetIterator implements Iterator<T> {
         int currentInd = 0;
         T currentObj = null;
-        boolean hasNextNoEmptyList = false;
+        boolean hasNext = false;
         boolean calledToNext = false;
 
         @Override
         public boolean hasNext() {
-            hasNextNoEmptyList = false;
-            while (!hasNextNoEmptyList && currentInd < hashTable.length) {
-                hasNextNoEmptyList = hashTable[currentInd] != null && hashTable[currentInd].size() > 0;
-                currentInd++;
+            hasNext = false;
+            while (!hasNext && currentInd < hashTable.length) {
+                hasNext = hashTable[currentInd] != null && hashTable[currentInd].size() > 0;
+                if (!hasNext) {
+                    currentInd++;
+                }
             }
-            currentInd--;
-            return hasNextNoEmptyList;
+            return hasNext;
         }
 
         @Override
