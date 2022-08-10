@@ -12,9 +12,9 @@ import org.junit.jupiter.api.Test;
 import telran.util.Collection;
 
 abstract class CollectionTests {
-	protected static final int N_NUMBERS = 1000;
+	protected static final int N_NUMBERS = 10000;
 	protected static final int N_RANDOM_NUMBERS = 100;
-	private static final int N_RUNS = 1000;
+	private static final int N_RUNS = 10000;
 	private static final int N_RANDOM_RUNS = 10;
 	protected Collection<Integer> collection;
 

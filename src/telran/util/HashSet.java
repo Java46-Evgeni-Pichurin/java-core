@@ -58,7 +58,6 @@ public class HashSet<T> implements Set<T> {
                 throw new IllegalStateException();
             }
             HashSet.this.remove(currentObj);
-            currentInd = 0;
             calledToNext = false;
         }
     }
