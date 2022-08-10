@@ -59,6 +59,7 @@ public class HashSet<T> implements Set<T> {
             }
             HashSet.this.remove(currentObj);
             calledToNext = false;
+            currentInd--;
         }
     }
 
