@@ -140,14 +140,9 @@ public class TreeSet<T> implements SortedSet<T> {
     }
 
     private void removeJunctionNode(Node<T> cur) {
-        Node<T> tmp = cur.parent;
-        if (tmp != null) {
-            tmp.right = cur.left;
-            tmp.right.right = cur.right;
-        } else {
-            root = cur.left;
-            root.right = cur.right;
-        }
+        Node<T> tmp = cur.right.left == null ? cur.right : getLeastNodeFrom(cur.right);
+        cur.obj = tmp.obj;
+        removeNonJunctionNode(cur);
     }
 
     private void removeNonJunctionNode(Node<T> cur) {
