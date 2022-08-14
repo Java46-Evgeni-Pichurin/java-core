@@ -140,45 +140,57 @@ public class TreeSet<T> implements SortedSet<T> {
     }
 
     private void removeJunctionNode(Node<T> cur) {
+        Node<T> parent = cur.parent;
+        if (parent == null) {
+            root = root.left != null ? root.left : root.right;
+            return;
+        }
         Node<T> tmp = cur.right.left == null ? cur.right : getLeastNodeFrom(cur.right);
         cur.obj = tmp.obj;
+        if (tmp == cur.right) {
+            twoChild(cur, parent);
+        }
+        else {
+            if(tmp.right != null) {
+                oneChild(cur, parent);
+            }
+            else {
+                twoChild(cur, parent);
+            }
+        }
         removeNonJunctionNode(cur);
     }
 
     private void removeNonJunctionNode(Node<T> cur) {
-        int child = findChild(cur);
         Node<T> tmp = cur.parent;
         if (tmp == null) {
             root = root.left != null ? root.left : root.right;
             return;
         }
-        if (child == 0) {
-            if (tmp.left == cur) {
-                tmp.left = null;
-            } else {
-                tmp.right = null;
-            }
+        oneChild(cur, tmp);
+        twoChild(cur, tmp);
+    }
+
+    private void twoChild(Node<T> cur, Node<T> parent) {
+        Node<T> child = cur.right != null ? cur.right : cur.left;
+        if (parent.right == cur) {
+            parent.right = child;
         }
-        if (child == 1) {
-            Node<T> curChild = cur.left != null ? cur.left : cur.right;
-            if (tmp.left == cur) {
-                tmp.left = curChild;
-            } else {
-                tmp.right = curChild;
-            }
+        else {
+            parent.left = child;
+        }
+        child.parent =  parent;
+    }
+
+    private void oneChild(Node<T> cur, Node<T> parent) {
+        if (parent.right == cur) {
+            parent.right = null;
+        }
+        else {
+            parent.left = null;
         }
     }
 
-    private int findChild(Node<T> cur) {
-        int child = 0;
-        if (cur.left != null) {
-            child++;
-        }
-        if (cur.right != null) {
-            child++;
-        }
-        return child;
-    }
 
     private boolean isJunction(Node<T> cur) {
         return cur.left != null && cur.right != null;
