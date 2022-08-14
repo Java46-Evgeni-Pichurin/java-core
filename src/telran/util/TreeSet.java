@@ -4,8 +4,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import javax.naming.OperationNotSupportedException;
-
 public class TreeSet<T> implements SortedSet<T> {
     private static class Node<T> {
         T obj;
@@ -143,24 +141,26 @@ public class TreeSet<T> implements SortedSet<T> {
         Node<T> tmp = cur.right.left == null ? cur.right : getLeastNodeFrom(cur.right);
         cur.obj = tmp.obj;
         if (tmp == cur.right) {
-            twoChild(cur, cur.parent);
+            oneChild(cur, cur.parent);
         }
         else {
             if(tmp.right != null) {
-                oneChild(cur, cur.parent);
+                noChild(cur, cur.parent);
             }
             else {
-                twoChild(cur, cur.parent);
+                oneChild(cur, cur.parent);
             }
         }
     }
 
     private void removeNonJunctionNode(Node<T> cur) {
-        oneChild(cur, cur.parent);
-        twoChild(cur, cur.parent);
+        if (cur.left != null && cur.right != null) {
+            oneChild(cur, cur.parent);
+        }
+        noChild(cur, cur.parent);
     }
 
-    private void twoChild(Node<T> cur, Node<T> parent) {
+    private void oneChild(Node<T> cur, Node<T> parent) {
         Node<T> child = cur.right != null ? cur.right : cur.left;
         if (parent.right == cur) {
             parent.right = child;
@@ -171,7 +171,7 @@ public class TreeSet<T> implements SortedSet<T> {
         child.parent =  parent;
     }
 
-    private void oneChild(Node<T> cur, Node<T> parent) {
+    private void noChild(Node<T> cur, Node<T> parent) {
         if (parent.right == cur) {
             parent.right = null;
         }
