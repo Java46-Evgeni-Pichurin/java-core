@@ -29,7 +29,6 @@ public class TreeSet<T> implements SortedSet<T> {
 
     private class TreeSetIterator implements Iterator<T> {
         Node<T> current = root == null ? null : getLeastNodeFrom(root);
-        Node<T> prevNode = null;
         boolean flNext = false;
 
         @Override
@@ -43,7 +42,6 @@ public class TreeSet<T> implements SortedSet<T> {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            prevNode = current;
             T res = current.obj;
             updateCurrent();
             flNext = true;
@@ -68,8 +66,11 @@ public class TreeSet<T> implements SortedSet<T> {
             if (!flNext) {
                 throw new IllegalStateException();
             }
+            Node<T> prevNode = getLeastNodeFrom(current) != null ? getLeastNodeFrom(current) : current.parent;
+            if (isJunction(prevNode)) {
+                current = prevNode;
+            }
             TreeSet.this.remove(prevNode.obj);
-            prevNode = current;
             flNext = false;
         }
     }
