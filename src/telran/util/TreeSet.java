@@ -154,10 +154,12 @@ public class TreeSet<T> implements SortedSet<T> {
     }
 
     private void removeNonJunctionNode(Node<T> cur) {
-        if (cur.left != null && cur.right != null) {
+        if (cur.left != null || cur.right != null) {
             oneChild(cur, cur.parent);
         }
-        noChild(cur, cur.parent);
+        else {
+            noChild(cur, cur.parent);
+        }
     }
 
     private void oneChild(Node<T> cur, Node<T> parent) {
