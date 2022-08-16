@@ -2,11 +2,7 @@ package telran.recursion;
 
 public class LineRecursion {
 
-    /*-------------------------------------Homework--------------------------------------------------/
-    /**
-     * @param x number
-     * @return x ^ 2
-     */
+    /*-------------------------------------Homework--------------------------------------------------*/
     public static int square(int x) {
         if (x == 0) {
             return 0;
@@ -17,11 +13,6 @@ public class LineRecursion {
         return x == 1 ? x : square(x - 1) + x + x - 1;
     }
 
-    /**
-     * @param a either negative or positive
-     * @param b positive
-     * @return a ^ b
-     */
     public static long pow(int a, int b) {
         boolean isPositiveNumber = a > 0;
         boolean isOddPow = isOddNumber(b);
@@ -37,9 +28,9 @@ public class LineRecursion {
                     a = -a;
                 }
                 if (!isPositiveNumber && isOddPow) {
-                    return -getPow(a, a, b - 2);
+                    return -getPow(a, 0, b);
                 }
-                return getPow(a, a, b - 2);
+                return getPow(a, 0, b);
         }
     }
 
@@ -57,18 +48,21 @@ public class LineRecursion {
                 sum     pow     sum     pow       sum      pow       sum      pow
         3^5 = (3+3+3) * 3^3 = (9+9+9) * 3^2 = (27+27+27) * 3^1 = (81+81+81) * 3^0
         -----------------------------------------------------------------------*/
-        sum = getSum(sum, num); // == sum *= Math.abs(num)
-        if (pow == 0) {
+        sum = getSum(num, sum); // == sum *= Math.abs(num)
+        if (pow == 1) {
             return sum;
         }
         return getPow(num, sum, pow - 1);
     }
 
-    private static int getSum(int a, int count) {
+    private static int getSum(int count, int sum) {
+        if (sum == 0) {
+            return count;
+        }
         if (count == 0) {
             return 0;
         }
-        return a + getSum(a, count - 1);
+        return sum + getSum(count - 1, sum);
     }
 
     /*----------------------------------------------------------------------------------------------*/
