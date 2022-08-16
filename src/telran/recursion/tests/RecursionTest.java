@@ -23,6 +23,7 @@ int count = 0;
 		assertEquals(100,pow(-10, 2));
 		assertEquals(1,pow(-10, 0));
 		assertEquals(-10,pow(-10, 1));
+		assertEquals(944076141,pow(981, 3));
 	}
 	@Test
 	void sumTest() {
@@ -32,6 +33,7 @@ int count = 0;
 	@Test
 	void squareTest() {
 		assertEquals(4, square(2));
+		assertEquals(16, square(4));
 		assertEquals(1, square(1));
 		assertEquals(0, square(0));
 		assertEquals(100, square(-10));

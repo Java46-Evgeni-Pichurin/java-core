@@ -11,8 +11,10 @@ public class LineRecursion {
         if (x == 0) {
             return 0;
         }
-        boolean isPositive = x > 0;
-        return x == 1 ? x : isPositive ? square(x - 1) + x + x - 1 : square(-x - 1) - x - x - 1;
+        if (x < 0) {
+            x = -x;
+        }
+        return x == 1 ? x : square(x - 1) + x + x - 1;
     }
 
     /**
