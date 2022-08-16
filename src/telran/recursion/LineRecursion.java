@@ -30,9 +30,13 @@ public class LineRecursion {
                 return 1;
             case 1:
                 return a;
+            case 2:
+                return square(a);
             default:
-                if (!isPositiveNumber && isOddPow) {
+                if (!isPositiveNumber) {
                     a = -a;
+                }
+                if (!isPositiveNumber && isOddPow) {
                     return -getPow(a, a, b - 2);
                 }
                 return getPow(a, a, b - 2);
@@ -53,7 +57,7 @@ public class LineRecursion {
                 sum     pow     sum     pow       sum      pow       sum      pow
         3^5 = (3+3+3) * 3^3 = (9+9+9) * 3^2 = (27+27+27) * 3^1 = (81+81+81) * 3^0
         -----------------------------------------------------------------------*/
-        sum = getSum(sum, num);
+        sum = getSum(sum, num); // == sum *= Math.abs(num)
         if (pow == 0) {
             return sum;
         }
@@ -63,10 +67,6 @@ public class LineRecursion {
     private static int getSum(int a, int count) {
         if (count == 0) {
             return 0;
-        }
-        if (a < 0) {
-            a = -a;
-            count = -count;
         }
         return a + getSum(a, count - 1);
     }

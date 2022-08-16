@@ -22,6 +22,7 @@ int count = 0;
 		assertEquals(-1000, pow(-10, 3));
 		assertEquals(100,pow(-10, 2));
 		assertEquals(1,pow(-10, 0));
+		assertEquals(9,pow(3, 2));
 		assertEquals(-10,pow(-10, 1));
 		assertEquals(944076141,pow(981, 3));
 	}
