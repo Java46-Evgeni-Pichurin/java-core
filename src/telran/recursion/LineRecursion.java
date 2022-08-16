@@ -8,7 +8,11 @@ public class LineRecursion {
      * @return x ^ 2
      */
     public static int square(int x) {
-        return getSum(x, x);
+        if (x == 0) {
+            return 0;
+        }
+        boolean isPositive = x > 0;
+        return x == 1 ? x : isPositive ? square(x - 1) + x + x - 1 : square(-x - 1) - x - x - 1;
     }
 
     /**
