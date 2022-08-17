@@ -14,7 +14,7 @@ public class LineRecursion {
     }
 
     public static long pow(int a, int b) {
-        boolean isPositiveNumber = a > 0;
+        boolean isNegativeNumber = a < 0;
         boolean isOddPow = isOddNumber(b);
         switch (b) {
             case 0:
@@ -24,7 +24,7 @@ public class LineRecursion {
             case 2:
                 return square(a);
             default:
-                if (!isPositiveNumber && isOddPow) {
+                if (isNegativeNumber && isOddPow) {
                     return -getPow(-a, 0, b);
                 }
                 return getPow(a, 0, b);
