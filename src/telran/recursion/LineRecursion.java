@@ -42,7 +42,7 @@ public class LineRecursion {
         };
     }
 
-    private static int getPow(int num, int sum, int pow) {
+    private static long getPow(int num, long sum, int pow) {
         /*-----------------------------------------------------------------------
         Example:
                 sum     pow     sum     pow       sum      pow       sum      pow
@@ -55,7 +55,7 @@ public class LineRecursion {
         return getPow(num, sum, pow - 1);
     }
 
-    private static int getSum(int count, int sum) {
+    private static long getSum(int count, long sum) {
         if (sum == 0) {
             return count;
         }
