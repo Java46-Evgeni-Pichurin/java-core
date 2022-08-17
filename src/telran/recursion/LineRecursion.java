@@ -24,11 +24,8 @@ public class LineRecursion {
             case 2:
                 return square(a);
             default:
-                if (!isPositiveNumber) {
-                    a = -a;
-                }
                 if (!isPositiveNumber && isOddPow) {
-                    return -getPow(a, 0, b);
+                    return -getPow(-a, 0, b);
                 }
                 return getPow(a, 0, b);
         }
