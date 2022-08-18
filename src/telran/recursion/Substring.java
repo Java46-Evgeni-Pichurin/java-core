@@ -14,6 +14,7 @@ public class Substring {
         }
         if (str.charAt(0) == substr.charAt(0)) {
             // moving forward both
+            // substring keeps current form
             return isSubstring(str.substring(1), substr.substring(1), initSubstr);
         }
         if (str.charAt(0) == initSubstr.charAt(0)) {
