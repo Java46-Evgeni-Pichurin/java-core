@@ -24,6 +24,7 @@ public class Substring {
         if (str.charAt(0) == initSubstr.charAt(1)) {
             // checking equality of the second char of initial substring with the first char of string
             // move forward only string from the second char
+            // substring keeps current form
             return isSubstring(str.substring(2), substr, initSubstr);
         }
         // move forward only string
