@@ -25,9 +25,9 @@ public class LineRecursion {
                 return square(a);
             default:
                 if (isNegativeNumber && isOddPow) {
-                    return -getPow(-a, 0, b);
+                    return -getPow(-a, -a, b);
                 }
-                return isNegativeNumber ? getPow(-a, 0, b) : getPow(a, 0, b);
+                return isNegativeNumber ? getPow(-a, -a, b) : getPow(a, a, b);
         }
     }
 
@@ -39,27 +39,18 @@ public class LineRecursion {
         };
     }
 
-    private static long getPow(int num, long sum, int pow) {
-        /*-----------------------------------------------------------------------
-        Example:
-                sum     pow     sum     pow       sum      pow       sum      pow
-        3^5 = (3+3+3) * 3^3 = (9+9+9) * 3^2 = (27+27+27) * 3^1 = (81+81+81) * 3^0
-        -----------------------------------------------------------------------*/
-        sum = getSum(num, sum); // == sum *= Math.abs(num)
+    private static long getPow(long num, long initNum, int pow) {
         if (pow == 1) {
-            return sum;
+            return num;
         }
-        return getPow(num, sum, pow - 1);
+        return getPow(multiply(num, initNum), initNum, pow - 1);
     }
 
-    private static long getSum(int count, long sum) {
-        if (sum == 0) {
-            return count;
-        }
-        if (count == 0) {
+    private static long multiply(long a, long b) {
+        if (a == 0 || b == 0) {
             return 0;
         }
-        return sum + getSum(count - 1, sum);
+        return a + multiply(a, b - 1);
     }
 
     /*----------------------------------------------------------------------------------------------*/
