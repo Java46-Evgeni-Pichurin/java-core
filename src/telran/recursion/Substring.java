@@ -22,12 +22,10 @@ public class Substring {
         if (str.charAt(0) == substr.charAt(0)) {
             return isSubstring(str.substring(1), substr.substring(1), substr = initSubstr);
         }
-        else {
-            substr = initSubstr;
-            if (str.charAt(0) == substr.charAt(0)) {
-                return isSubstring(str.substring(1), substr.substring(1), substr);
-            }
-            return isSubstring(str.substring(1), substr, substr);
+        substr = initSubstr;
+        if (str.charAt(0) == substr.charAt(0)) {
+            return isSubstring(str.substring(1), substr.substring(1), substr);
         }
+        return isSubstring(str.substring(1), substr, substr);
     }
 }
