@@ -16,18 +16,18 @@ public class Substring {
             // move forward both
             return isSubstring(str.substring(1), substr.substring(1), initSubstr);
         }
-        String tmp = substr;
-        substr = initSubstr;
-        if (str.charAt(0) == substr.charAt(0)) {
-            // checking equality of initial substring with first char of string
-            // move forward both
-            return isSubstring(str.substring(1), substr.substring(1), initSubstr);
+        if (str.charAt(0) == initSubstr.charAt(0)) {
+            // checking equality of first char of initial substring with first char of string
+            // move forward both (substring from the initial form)
+            return isSubstring(str.substring(1), initSubstr.substring(1), initSubstr);
         }
-        if (str.charAt(0) == substr.charAt(1)) {
-            // checking equality of previous char of string with first char of substring
-            // move forward both
-            return isSubstring(str.substring(2), tmp, initSubstr);
+        if (str.charAt(0) == initSubstr.charAt(1)) {
+            // checking equality of previous char of string with second char of initial substring
+            // move forward only string from the second char
+            return isSubstring(str.substring(2), substr, initSubstr);
         }
-        return isSubstring(str.substring(1), substr, initSubstr); // move forward only string
+        // move forward only string
+        // substring comes back to initial form
+        return isSubstring(str.substring(1), initSubstr, initSubstr);
     }
 }
