@@ -27,7 +27,7 @@ public class LineRecursion {
                 if (isNegativeNumber && isOddPow) {
                     return -getPow(-a, 0, b);
                 }
-                return getPow(a, 0, b);
+                return isNegativeNumber ? getPow(-a, 0, b) : getPow(a, 0, b);
         }
     }
 
