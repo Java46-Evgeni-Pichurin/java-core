@@ -19,7 +19,7 @@ public class Substring {
         String tmp = substr;
         substr = initSubstr;
         if (str.charAt(0) == substr.charAt(0)) {
-            // checking equality of previous char of substring with first char of string
+            // checking equality of initial substring with first char of string
             // move forward both
             return isSubstring(str.substring(1), substr.substring(1), initSubstr);
         }
