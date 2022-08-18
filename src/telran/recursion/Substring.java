@@ -13,16 +13,21 @@ public class Substring {
             return true;
         }
         if (str.charAt(0) == substr.charAt(0)) {
+            // move forward both
             return isSubstring(str.substring(1), substr.substring(1), initSubstr);
         }
         String tmp = substr;
         substr = initSubstr;
         if (str.charAt(0) == substr.charAt(0)) {
+            // checking equality of previous char of substring with first char of string
+            // move forward both
             return isSubstring(str.substring(1), substr.substring(1), initSubstr);
         }
         if (str.charAt(0) == substr.charAt(1)) {
+            // checking equality of previous char of string with first char of substring
+            // move forward both
             return isSubstring(str.substring(2), tmp, initSubstr);
         }
-        return isSubstring(str.substring(1), substr, initSubstr);
+        return isSubstring(str.substring(1), substr, initSubstr); // move forward only string
     }
 }
