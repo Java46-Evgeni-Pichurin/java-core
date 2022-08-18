@@ -22,7 +22,7 @@ public class Substring {
             return isSubstring(str.substring(1), initSubstr.substring(1), initSubstr);
         }
         if (str.charAt(0) == initSubstr.charAt(1)) {
-            // checking equality of the first char of string with the second char of initial substring
+            // checking equality of the second char of initial substring with the first char of string
             // move forward only string from the second char
             return isSubstring(str.substring(2), substr, initSubstr);
         }
