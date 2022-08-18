@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 public class SubstringTest {
     String str1 = "communicate";
+    String str2 = "boboobooob";
+    String str3 = "4rrrr4rr";
 
     @Test
     void hasSubstringTest() {
@@ -17,6 +19,9 @@ public class SubstringTest {
         assertTrue(isSubstring(str1, "unic"));
         assertTrue(isSubstring(str1, "ommunicate"));
         assertTrue(isSubstring(str1, "communicat"));
+        assertTrue(isSubstring(str2, "obooob"));
+        assertTrue(isSubstring(str3, "rrr"));
+        assertTrue(isSubstring(str3, "rrrr4rr"));
     }
 
     @Test
@@ -27,5 +32,7 @@ public class SubstringTest {
         assertFalse(isSubstring(str1, "comunicate"));
         assertFalse(isSubstring(str1, "commm"));
         assertFalse(isSubstring(str1, " communicat"));
+        assertFalse(isSubstring(str2, "bobooob"));
+        assertFalse(isSubstring(str3, "rrrr4rrr"));
     }
 }
