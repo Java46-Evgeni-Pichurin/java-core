@@ -13,7 +13,7 @@ public class Substring {
             return true;
         }
         if (str.charAt(0) == substr.charAt(0)) {
-            // moving forward both
+            // moving forward both from the second char
             // substring keeps current form
             return isSubstring(str.substring(1), substr.substring(1), initSubstr);
         }
