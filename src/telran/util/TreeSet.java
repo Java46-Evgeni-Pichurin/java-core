@@ -324,8 +324,8 @@ public class TreeSet<T> implements SortedSet<T> {
     }
 
     private void swap(Node<T> junction) {
-        Node<T> tmp = junction.left == null ? null : junction.left;
-        junction.left = junction.right == null ? null : junction.right;
+        Node<T> tmp = junction.left;
+        junction.left = junction.right;
         junction.right = tmp;
     }
 }
