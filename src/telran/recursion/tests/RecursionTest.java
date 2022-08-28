@@ -32,15 +32,5 @@ int count = 0;
 		assertEquals(100, square(10));
 		assertEquals(100, square(-10));
 	}
-	
-//	private void f() {
-//		
-//		if(Math.random() < 0.99) {
-//			f();
-//			count++;
-//		}
-//		
-//		
-//	}
 
 }
