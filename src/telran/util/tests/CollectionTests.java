@@ -185,8 +185,8 @@ abstract class CollectionTests {
 
         Object[] result = collection.stream()
                 .filter(
-                        element -> element == (int)collection.stream().reduce(0, Integer::max) ||
-                                element == (int)collection.stream().reduce(0, Integer::min)
+                        element -> element == (int) collection.stream().reduce(0, Integer::max) ||
+                                element == (int) collection.stream().reduce(0, Integer::min)
                 ).toArray();
         Object[] expected = {-5, 40};
         assertArrayEquals(expected, result);
