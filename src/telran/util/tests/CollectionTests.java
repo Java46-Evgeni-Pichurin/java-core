@@ -183,12 +183,12 @@ abstract class CollectionTests {
         assertArrayEquals(new Integer[]{-5}, collection.stream()
                 .filter(n -> n < 0).toArray(Integer[]::new));
 
-        List<Integer> result = collection.stream()
+        Object[] result = collection.stream()
                 .filter(
                         element -> element == (int)collection.stream().reduce(0, Integer::max) ||
                                 element == (int)collection.stream().reduce(0, Integer::min)
-                ).toList();
+                ).toArray();
         Object[] expected = {-5, 40};
-        assertArrayEquals(expected, result.toArray());
+        assertArrayEquals(expected, result);
     }
 }
