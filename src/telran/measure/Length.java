@@ -23,21 +23,23 @@ public class Length implements Comparable<Length> {
 	 * 10m == 10000mm
 	 */
 	public boolean equals(Object obj) {
-		//TODO
-		//LengthUnit.
-		
-		
-		return false;
+		try	{
+			return obj == this.unit
+					|| this.compareTo((Length) obj) == 0;
+		}
+		catch (Exception e) {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	@Override
 	public int compareTo(Length o) {
-		//TODO
-		return 0;
+		return Math.round(
+				this.convert(LengthUnit.M).getAmount()
+						- o.convert(LengthUnit.M).getAmount());
 	}
 
 	public Length convert(LengthUnit unit) {
-		//TODO
 		float factor = this.unit.value / unit.value;
 		return new Length(factor * this.getAmount(), unit);
 	}
