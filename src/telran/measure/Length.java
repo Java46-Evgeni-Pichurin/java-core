@@ -17,11 +17,6 @@ public class Length implements Comparable<Length> {
 		return unit;
 	}
 
-	@Override
-	/**
-	 * equals two Length objects according to LengthUnit
-	 * 10m == 10000mm
-	 */
 	public boolean equals(Object obj) {
 		try	{
 			return obj == this.unit
