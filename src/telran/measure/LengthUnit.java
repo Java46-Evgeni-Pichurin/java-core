@@ -14,7 +14,7 @@ public enum LengthUnit {
 
     public Length between(Length l1, Length l2) {
         return new Length(
-                Math.abs(getConvertedAmount(l1)- getConvertedAmount(l2))
+                Math.abs(getConvertedAmount(l1) - getConvertedAmount(l2))
                 , this);
     }
 
