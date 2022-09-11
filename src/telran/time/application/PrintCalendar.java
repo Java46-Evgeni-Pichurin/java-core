@@ -47,7 +47,6 @@ public class PrintCalendar {
 
     private static void printOffset(int column) {
         System.out.printf("%s", " ".repeat(column * 4));
-
     }
 
     private static int getFirstColumn(int month, int year, int dayOfWeek) {
@@ -62,7 +61,6 @@ public class PrintCalendar {
         DayOfWeek[] copyDayWeeks = new DayOfWeek[dayWeeks.length];
         System.arraycopy(dayWeeks, index, copyDayWeeks, 0, dayWeeks.length - index);
         System.arraycopy(dayWeeks, 0, copyDayWeeks, dayWeeks.length - index, index);
-
         System.out.print("  ");
         for (DayOfWeek weekDay : copyDayWeeks) {
             System.out.printf("%s ", weekDay.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
@@ -111,8 +109,6 @@ public class PrintCalendar {
         } catch (NumberFormatException e) {
             throw new Exception("year should be a number");
         }
-
-
     }
 
     private static int getMonth(String monthStr) throws Exception {
@@ -127,7 +123,5 @@ public class PrintCalendar {
         } catch (NumberFormatException e) {
             throw new Exception("month should be a number");
         }
-
     }
-
 }
