@@ -52,7 +52,8 @@ public class PrintCalendar {
     private static int getFirstColumn(int month, int year, int dayOfWeek) {
         LocalDate firstMonthDate = LocalDate.of(year, month, 1);
         int weekDay = firstMonthDate.getDayOfWeek().getValue();
-        return Math.abs(weekDay - dayOfWeek);
+        int res = Math.abs(weekDay - dayOfWeek);
+        return weekDay < dayOfWeek ? DayOfWeek.values().length - res : res;
     }
 
     private static void printWeekDays(int dayOfWeek) {
@@ -63,7 +64,7 @@ public class PrintCalendar {
         System.arraycopy(dayWeeks, 0, copyDayWeeks, dayWeeks.length - index, index);
         System.out.print("  ");
         for (DayOfWeek weekDay : copyDayWeeks) {
-            System.out.printf("%s ", weekDay.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
+            System.out.printf("%s ", weekDay.getDisplayName(TextStyle.SHORT, Locale.ENGLISH));
         }
         System.out.println();
     }
@@ -71,7 +72,7 @@ public class PrintCalendar {
     private static void printTitle(int month, int year) {
         Month monthEn = Month.of(month);
         System.out.printf("%s, %d\n", monthEn.getDisplayName(TextStyle.FULL,
-                Locale.getDefault()), year);
+                Locale.ENGLISH), year);
     }
 
     private static int[] getMonthYear(String[] args) throws Exception {
