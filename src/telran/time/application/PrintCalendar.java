@@ -1,6 +1,5 @@
 package telran.time.application;
 
-import java.lang.reflect.Array;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
@@ -66,7 +65,7 @@ public class PrintCalendar {
 
         System.out.print("  ");
         for (DayOfWeek weekDay : copyDayWeeks) {
-            System.out.printf("%s ", weekDay.getDisplayName(TextStyle.SHORT, Locale.ENGLISH)); //TODO default
+            System.out.printf("%s ", weekDay.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
         }
         System.out.println();
     }
@@ -74,7 +73,7 @@ public class PrintCalendar {
     private static void printTitle(int month, int year) {
         Month monthEn = Month.of(month);
         System.out.printf("%s, %d\n", monthEn.getDisplayName(TextStyle.FULL,
-                Locale.ENGLISH), year); //TODO default
+                Locale.getDefault()), year);
     }
 
     private static int[] getMonthYear(String[] args) throws Exception {
