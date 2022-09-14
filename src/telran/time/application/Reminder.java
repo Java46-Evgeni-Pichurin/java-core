@@ -36,11 +36,11 @@ public class Reminder {
     private static long getNumber(String number) throws Exception {
         long res;
         try {
-            res = number == null ? -1 : Long.parseLong(number);
+            res = Long.parseLong(number);
         } catch (NumberFormatException e) {
             throw new Exception("Interval and duration should be a number.");
         }
-        if (res <= 0 && number != null) {
+        if (res <= 0) {
             throw new IllegalArgumentException("Interval and duration should be a positive number.");
         }
         return res;
@@ -59,8 +59,7 @@ public class Reminder {
         long durationInMills;
         if (reminderDuration == 1) {
             durationInMills = ChronoUnit.HOURS.getDuration().toMillis();
-        }
-        else {
+        } else {
             durationInMills = reminderDuration * cUnit.getDuration().toMillis();
         }
         if (intervalInMills > durationInMills) {
