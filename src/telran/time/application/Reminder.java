@@ -68,15 +68,16 @@ public class Reminder {
     private static void getRock(long intervalInMills, long durationInMills) {
         final long mills = System.currentTimeMillis();
         final long[] realInterval = new long[1];
+        final Duration[] duration = new Duration[1];
         Timer timer = new Timer();
-        LocalDateTime ldt = LocalDateTime.now();
+        LocalDateTime start = LocalDateTime.now();
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
                 realInterval[0] = System.currentTimeMillis() - mills;
-                Duration duration = Duration.between(ldt, LocalDateTime.now());
+                duration[0] = Duration.between(start, LocalDateTime.now());
                 // LOW ACCURACY
-                System.out.printf("\007\007\007 - %d seconds, %d milliseconds\n", duration.getSeconds(), duration.getNano() / FROM_NANO_TO_MILLI);
+                System.out.printf("\007\007\007 - %d seconds, %d milliseconds\n", duration[0].getSeconds(), duration[0].getNano() / FROM_NANO_TO_MILLI);
                 if (realInterval[0] > durationInMills) {
                     cancel();
                     timer.cancel();
