@@ -56,12 +56,9 @@ public class Reminder {
 
     private static void getStart(long intervalValue, ChronoUnit cUnit, long reminderDuration) {
         long intervalInMills = intervalValue * cUnit.getDuration().toMillis();
-        long durationInMills;
-        if (reminderDuration == 1) {
-            durationInMills = ChronoUnit.HOURS.getDuration().toMillis();
-        } else {
-            durationInMills = reminderDuration * cUnit.getDuration().toMillis();
-        }
+        long durationInMills = reminderDuration == 1 ?
+                ChronoUnit.HOURS.getDuration().toMillis() :
+                reminderDuration * cUnit.getDuration().toMillis();
         if (intervalInMills > durationInMills) {
             throw new IllegalArgumentException("Duration can not be less than given interval.");
         }
