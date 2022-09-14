@@ -30,7 +30,7 @@ public class Reminder {
         long intervalValue = getNumber(interval);                           // mandatory args[0] interval value
         ChronoUnit cUnit = getUnit(unit);                                   // mandatory args[1] ChronoUnit enum string value (case insensitive)
         long reminderDuration = duration == null ? 1 : getNumber(duration); // optional args[2] duration
-        getRock(intervalValue, cUnit, reminderDuration);
+        getStart(intervalValue, cUnit, reminderDuration);
     }
 
     private static long getNumber(String number) throws Exception {
@@ -41,7 +41,7 @@ public class Reminder {
             throw new Exception("Interval and duration should be a number.");
         }
         if (res <= 0 && number != null) {
-            throw new Exception("Interval and duration should be a positive number.");
+            throw new IllegalArgumentException("Interval and duration should be a positive number.");
         }
         return res;
     }
@@ -54,24 +54,34 @@ public class Reminder {
         }
     }
 
-    private static void getRock(long intervalValue, ChronoUnit cUnit, long reminderDuration) {
+    private static void getStart(long intervalValue, ChronoUnit cUnit, long reminderDuration) {
         long intervalInMills = intervalValue * cUnit.getDuration().toMillis();
-        long[] durationInMills = new long[1];
-        Timer timer = new Timer();
-        final long mills = System.currentTimeMillis();
-        LocalDateTime ldt = LocalDateTime.now();
+        long durationInMills;
         if (reminderDuration == 1) {
-            durationInMills[0] = ChronoUnit.HOURS.getDuration().toMillis();
+            durationInMills = ChronoUnit.HOURS.getDuration().toMillis();
         }
-        durationInMills[0] = reminderDuration * cUnit.getDuration().toMillis();
+        else {
+            durationInMills = reminderDuration * cUnit.getDuration().toMillis();
+        }
+        if (intervalInMills > durationInMills) {
+            throw new IllegalArgumentException("Duration can not be less than given interval.");
+        }
+        getRock(intervalInMills, durationInMills);
+    }
 
+    private static void getRock(long intervalInMills, long durationInMills) {
+        final long mills = System.currentTimeMillis();
+        final long[] realInterval = new long[1];
+        Timer timer = new Timer();
+        LocalDateTime ldt = LocalDateTime.now();
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                long between = System.currentTimeMillis() - mills;
+                realInterval[0] = System.currentTimeMillis() - mills;
                 Duration duration = Duration.between(ldt, LocalDateTime.now());
-                System.out.printf("\007\007\007 - %d seconds, %d milliseconds\n", duration.getSeconds(), duration.getNano() / FROM_NANO_TO_MILLI) ;
-                if (between > durationInMills[0]) {
+                // LOW ACCURACY
+                System.out.printf("\007\007\007 - %d seconds, %d milliseconds\n", duration.getSeconds(), duration.getNano() / FROM_NANO_TO_MILLI);
+                if (realInterval[0] > durationInMills) {
                     cancel();
                     timer.cancel();
                 }
