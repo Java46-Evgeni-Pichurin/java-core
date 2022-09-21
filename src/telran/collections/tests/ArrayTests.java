@@ -26,10 +26,10 @@ class ArrayTests {
         Integer[] boxedArray = Arrays.stream(array).boxed().toArray(Integer[]::new);
         HashSet<Integer> hashSet = new HashSet<>(Arrays.asList(boxedArray));
         Map<Integer, Integer> pairs = new HashMap<>();
-        for (int i : array) {
-            int dif = halfSum - i;
-            if (!pairs.containsKey(i) && hashSet.contains(dif) && dif != i) {
-                pairs.put(dif, i);
+        for (int firstEl : array) {
+            int secondEl = halfSum - firstEl;
+            if (hashSet.contains(secondEl) && secondEl != firstEl) {
+                pairs.put(firstEl, secondEl);
             }
         }
         return !pairs.isEmpty();
