@@ -48,9 +48,9 @@ class ArrayTests {
         Integer[] boxedArray = Arrays.stream(array).boxed().toArray(Integer[]::new);
         HashSet<Integer> hashSet = new HashSet<>(Arrays.asList(boxedArray));
         ArrayList<Integer> arrayList = new ArrayList<>();
-        for (int j : array) {
-            if (hashSet.contains(j * -1)) {
-                arrayList.add(j);
+        for (int i : array) {
+            if (hashSet.contains(i * -1)) {
+                arrayList.add(i);
             }
         }
         for (Integer integer : arrayList) {
