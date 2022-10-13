@@ -63,11 +63,14 @@ public class CopyClass {
         long sourceSize = source.length();
         FileInputStream fis = new FileInputStream(source);
         FileOutputStream fos = new FileOutputStream(destination);
+        byte[] buffer;
+        int len;
         try {
             while (sourceSize > 0) {
-                byte[] buffer = new byte[BYTES_IN_MB];
+                buffer = new byte[BYTES_IN_MB];
+                len = sourceSize < BYTES_IN_MB ? (int) sourceSize : BYTES_IN_MB;
                 sourceSize -= fis.read(buffer);
-                fos.write(buffer);
+                fos.write(buffer, 0, len);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
