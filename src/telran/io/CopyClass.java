@@ -60,11 +60,9 @@ public class CopyClass {
     }
 
     public void getStreams(File source, File destination) throws IOException {
-        FileInputStream fis;
-        FileOutputStream fos;
         long sourceSize = source.length();
-        fis = new FileInputStream(source);
-        fos = new FileOutputStream(destination);
+        FileInputStream fis = new FileInputStream(source);
+        FileOutputStream fos = new FileOutputStream(destination);
         try {
             while (sourceSize > 0) {
                 byte[] buffer = new byte[BYTES_IN_MB];
