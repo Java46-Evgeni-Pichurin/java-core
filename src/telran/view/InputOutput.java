@@ -31,7 +31,6 @@ public interface InputOutput {
             }
         }
         return result;
-
     }
 
     default Integer readInt(String prompt, String errorPrompt) {
@@ -45,7 +44,6 @@ public interface InputOutput {
                 throw new RuntimeException(String.format("%d out of the range - [%d - %d]", num, min, max));
             }
             return num;
-
         });
     }
 
@@ -56,7 +54,7 @@ public interface InputOutput {
     default String readOption(String prompt, String errorPrompt, List<String> options) {
         return readObject(prompt, errorPrompt, option -> {
             if (!options.contains(option)) {
-                throw new RuntimeException(String.format("There is no such option in the list: %s", options));
+                throw new RuntimeException("There is no such option in the list");
             }
             return option;
         });
@@ -64,7 +62,7 @@ public interface InputOutput {
 
     default LocalDate readDate(String prompt, String errorPrompt) {
         return readObject(prompt, errorPrompt, stringDate ->
-                getLocalDate(stringDate ,"YYYY-MM-DD"));
+                getLocalDate(stringDate, "yyyy-MM-dd"));
     }
 
     default LocalDate readDate(String prompt, String errorPrompt, String format) {
@@ -77,12 +75,17 @@ public interface InputOutput {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
             res = LocalDate.parse(stringDate, formatter);
         } catch (Exception e) {
-            throw new RuntimeException("Invalid input date format.");
+            throw new RuntimeException("Invalid input date / date format.");
         }
         return res;
     }
 
     default String readPredicate(String prompt, String errorPrompt, Predicate<String> predicate) {
-        return readObject(prompt, errorPrompt, s -> predicate.test(s) ? s : "Given data does not pass the test." );
+        return readObject(prompt, errorPrompt, s -> {
+            if (!predicate.test(s)) {
+                throw new RuntimeException("Given data does not pass the test.");
+            }
+            return s;
+        });
     }
 }
