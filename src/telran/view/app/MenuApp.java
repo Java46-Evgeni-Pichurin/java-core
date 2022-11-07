@@ -1,6 +1,9 @@
 package telran.view.app;
 
 import telran.view.*;
+import telran.view.menu.DateOperationsMenu;
+import telran.view.menu.Menu;
+import telran.view.menu.NumbersOperationsMenu;
 
 public class MenuApp {
     public static void main(String[] args) {

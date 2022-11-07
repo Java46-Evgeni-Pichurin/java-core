@@ -1,4 +1,4 @@
-package telran.view;
+package telran.view.tests;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
+import telran.view.ConsoleInputOutput;
+import telran.view.InputOutput;
 
 class InputOutputTest {
     private static final String ERROR = "ERROR\n";

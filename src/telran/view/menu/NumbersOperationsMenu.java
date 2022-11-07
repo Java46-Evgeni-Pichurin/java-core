@@ -1,4 +1,7 @@
-package telran.view;
+package telran.view.menu;
+
+import telran.view.InputOutput;
+import telran.view.Item;
 
 public class NumbersOperationsMenu {
 
