@@ -27,7 +27,10 @@ public class PrinterControllerAppl {
         }
         for (int j = 0; j < list.size(); j++) {
             if (j == list.size() - 1) list.get(j).connectTo(list.get(0));
-            else list.get(j).connectTo(list.get(j + 1));
+            else {
+                list.get(j).connectTo(list.get(j + 1));
+                list.get(j + 1).start();
+            }
         }
     }
 
