@@ -3,6 +3,7 @@ package telran.multithreading.games;
 public class Runner extends Thread {
     private final Race race;
     private final int runnerId;
+    private static final long start = System.currentTimeMillis();
 
     public Runner(Race race, int runnerId) {
         this.race = race;
@@ -14,7 +15,7 @@ public class Runner extends Thread {
         int sleepRange = race.getMaxSleep() - race.getMinSleep() + 1;
         int minSleep = race.getMinSleep();
         int distance = race.getDistance();
-        long start = System.currentTimeMillis();
+        //long start = System.currentTimeMillis();
         for (int i = 0; i < distance; i++) {
             try {
                 sleep((long) (minSleep + Math.random() * sleepRange));
@@ -26,7 +27,7 @@ public class Runner extends Thread {
         addToTable(start, runnerId);
     }
 
-    private void addToTable(long start, int runnerId) {
+    synchronized private void addToTable(long start, int runnerId) {
         race.setPlace(System.currentTimeMillis() - start, runnerId);
     }
 }
