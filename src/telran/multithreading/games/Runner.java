@@ -1,0 +1,32 @@
+package telran.multithreading.games;
+
+public class Runner extends Thread {
+    private final Race race;
+    private final int runnerId;
+
+    public Runner(Race race, int runnerId) {
+        this.race = race;
+        this.runnerId = runnerId;
+    }
+
+    @Override
+    public void run() {
+        int sleepRange = race.getMaxSleep() - race.getMinSleep() + 1;
+        int minSleep = race.getMinSleep();
+        int distance = race.getDistance();
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < distance; i++) {
+            try {
+                sleep((long) (minSleep + Math.random() * sleepRange));
+            } catch (InterruptedException e) {
+                throw new IllegalStateException();
+            }
+            System.out.println(runnerId);
+        }
+        addToTable(start, runnerId);
+    }
+
+    private void addToTable(long start, int runnerId) {
+        race.setPlace(System.currentTimeMillis() - start, runnerId);
+    }
+}
