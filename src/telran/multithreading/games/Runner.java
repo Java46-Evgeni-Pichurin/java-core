@@ -24,10 +24,10 @@ public class Runner extends Thread {
             }
             System.out.println(runnerId);
         }
-        addToTable(start, runnerId);
+        addToTable(runnerId);
     }
 
-    synchronized private void addToTable(long start, int runnerId) {
-        race.setPlace(System.currentTimeMillis() - start, runnerId);
+    synchronized private void addToTable(int runnerId) {
+        race.setPlace(System.currentTimeMillis() - Runner.start, runnerId);
     }
 }
