@@ -91,6 +91,7 @@ public class Truck extends Thread {
     public static void refreshElevators() {
         elevator1 = 0;
         elevator2 = 0;
+        counterOfWaits.set(0);
     }
     public static long getElevator1() {
         return elevator1;
