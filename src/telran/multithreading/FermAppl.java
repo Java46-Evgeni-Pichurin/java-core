@@ -12,13 +12,15 @@ public class FermAppl {
     private static final int N_RUNS = 10;
 
     public static void main(String[] args) {
-        long avgTime;
         Truck[] trucks = new Truck[N_TRUCKS];
         System.out.printf("Start trucks with common mutex (%d runs):\n", N_RUNS);
-        avgTime = startRunning(trucks , true);
-        System.out.printf("Average running time is :%d\n", avgTime);
+        runApp(trucks, true);
         System.out.printf("\nStart trucks with different mutexes (%d runs):\n", N_RUNS);
-        avgTime = startRunning(trucks , false);
+        runApp(trucks, false);
+    }
+
+    private static void runApp(Truck[] trucks, boolean hasCommonMutex) {
+        long avgTime = startRunning(trucks , hasCommonMutex);
         System.out.printf("Average running time is :%d\n", avgTime);
     }
 
