@@ -20,6 +20,7 @@ public class Philosophers {
             t.start();
         }
     }
+
     static class Philosopher implements Runnable {
 
         private final Object leftFork;
@@ -42,9 +43,8 @@ public class Philosophers {
             try {
                 while (true) {
                     // thinking
-                    doAction("Waiting");
+                    doAction(System.nanoTime() + ": Thinking");
                     synchronized (accept) {
-                        doAction(System.nanoTime() + ": Thinking");
                         synchronized (leftFork) {
                             doAction(System.nanoTime() + ": Picked up left fork");
                             synchronized (rightFork) {
