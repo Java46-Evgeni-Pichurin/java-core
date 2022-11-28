@@ -42,7 +42,6 @@ public class Philosophers {
         public void run() {
             try {
                 while (true) {
-                    // thinking
                     doAction(System.nanoTime() + ": Thinking");
                     synchronized (accept) {
                         synchronized (leftFork) {
