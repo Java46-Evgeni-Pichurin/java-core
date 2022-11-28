@@ -43,6 +43,7 @@ public class Philosophers {
                 while (true) {
                     doAction(System.nanoTime() + ": Thinking");
                     synchronized (accept) {
+                        // one philosopher eats, others think
                         synchronized (leftFork) {
                             doAction(System.nanoTime() + ": Picked up left fork");
                             synchronized (rightFork) {
