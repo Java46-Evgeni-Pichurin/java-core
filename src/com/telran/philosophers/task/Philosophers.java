@@ -22,7 +22,6 @@ public class Philosophers {
     }
 
     static class Philosopher implements Runnable {
-
         private final Object leftFork;
         private final Object rightFork;
         private static final Object accept = new Object();
