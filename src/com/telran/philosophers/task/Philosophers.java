@@ -1,6 +1,5 @@
 package com.telran.philosophers.task;
 
-import java.util.Arrays;
 
 public class Philosophers {
     public static void main(String[] args) throws Exception {
