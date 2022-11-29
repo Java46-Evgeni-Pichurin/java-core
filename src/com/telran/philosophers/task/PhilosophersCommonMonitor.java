@@ -1,8 +1,6 @@
 package com.telran.philosophers.task;
 
-import java.util.Arrays;
-
-public class Philosophers {
+public class PhilosophersCommonMonitor {
     public static void main(String[] args) throws Exception {
 
         Philosopher[] philosophers = new Philosopher[5];
@@ -15,9 +13,9 @@ public class Philosophers {
         for (int i = 0; i < philosophers.length; i++) {
             Object leftFork = forks[i];
             Object rightFork = forks[(i + 1) % forks.length];
-            philosophers[i] = i < ((i + 1) % forks.length) ?
-                    new Philosopher(leftFork, rightFork) :
-                    new Philosopher(rightFork, leftFork);
+
+            philosophers[i] = new Philosopher(leftFork, rightFork);
+
             Thread t = new Thread(philosophers[i], "Philosopher " + (i + 1));
             t.start();
         }
@@ -26,6 +24,7 @@ public class Philosophers {
     static class Philosopher implements Runnable {
         private final Object leftFork;
         private final Object rightFork;
+        private static final Object accept = new Object();
 
         public Philosopher(Object leftFork, Object rightFork) {
             this.leftFork = leftFork;
@@ -43,6 +42,7 @@ public class Philosophers {
             try {
                 while (true) {
                     doAction(System.nanoTime() + ": Thinking");
+                    synchronized (accept) {
                         // one philosopher eats, others think
                         synchronized (leftFork) {
                             doAction(System.nanoTime() + ": Picked up left fork");
@@ -56,6 +56,7 @@ public class Philosophers {
                             doAction(System.nanoTime() + ": Put down left fork. Back to thinking");
                         }
                     }
+                }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
