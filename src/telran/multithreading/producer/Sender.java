@@ -14,10 +14,13 @@ public class Sender extends Thread {
 	public void run() {
 		for(int i = 0; i < nMessages; i++) {
 			try {
-				messageBox.put(String.format("message%d from thread ", i));
+				messageBox.put(String.format("Message-%d from ", i));
 			} catch (InterruptedException ignored) {}
 		}
-		while (messageBox.take() != null) {}
-		messageBox.setFinished(true);
+		while (!messageBox.finished()) {
+			if (messageBox.take() == null) {
+				messageBox.setFinished(true);
+			}
+		}
 	}
 }

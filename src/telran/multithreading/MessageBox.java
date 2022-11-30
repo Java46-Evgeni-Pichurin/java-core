@@ -14,6 +14,15 @@ public class MessageBox {
         this.finished.set(finished);
     }
 
+    public boolean finished() {
+        monitor.lock();
+        try {
+            return finished.get();
+        } finally {
+            monitor.unlock();
+        }
+    }
+
     public void put(String message) throws InterruptedException {
         monitor.lock();
         try {

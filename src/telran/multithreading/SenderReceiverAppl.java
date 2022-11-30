@@ -1,5 +1,6 @@
 package telran.multithreading;
 
+import java.awt.*;
 import java.util.stream.IntStream;
 
 import telran.multithreading.consumer.Receiver;
@@ -18,7 +19,8 @@ public class SenderReceiverAppl {
 		sender.start();
 		sender.join();
 		joinReceivers(receivers);
-		System.out.println("Total number of messages: " + Receiver.getMessagesCounter());
+
+		System.out.println("\nTotal number of messages: " + Receiver.getMessagesCounter());
 	}
 
 	private static void joinReceivers(Receiver[] receivers) {
@@ -34,6 +36,7 @@ public class SenderReceiverAppl {
 	private static void startReceivers(Receiver[] receivers, MessageBox messageBox) {
 		IntStream.range(0, N_RECEIVERS).forEach(i -> {
 			receivers[i] = new Receiver(messageBox);
+			receivers[i].setName(String.format("receiver-%d", i+1));
 			receivers[i].start();
 		});
 	}
