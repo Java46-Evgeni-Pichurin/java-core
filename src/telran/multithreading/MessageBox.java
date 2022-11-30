@@ -38,7 +38,7 @@ public class MessageBox {
             producerWaitingCondition.signal();
             return res;
         } finally {
-            consumerWaitingCondition.signal();
+            //consumerWaitingCondition.signal();
             monitor.unlock();
         }
     }
