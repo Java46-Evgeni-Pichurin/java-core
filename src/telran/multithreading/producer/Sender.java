@@ -17,7 +17,7 @@ public class Sender extends Thread {
 				messageBox.put(String.format("Message-%d from ", i));
 			} catch (InterruptedException ignored) {}
 		}
-		while (!messageBox.finished()) {
+		while (!messageBox.isFinished()) {
 			if (messageBox.take() == null) {
 				messageBox.setFinished(true);
 			}

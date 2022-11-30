@@ -1,6 +1,5 @@
 package telran.multithreading;
 
-import java.awt.*;
 import java.util.stream.IntStream;
 
 import telran.multithreading.consumer.Receiver;
