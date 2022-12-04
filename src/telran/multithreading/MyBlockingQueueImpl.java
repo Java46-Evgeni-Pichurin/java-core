@@ -11,16 +11,16 @@ import java.util.function.BooleanSupplier;
 public class MyBlockingQueueImpl<E> implements BlockingQueue<E> {
     private final LinkedList<E> queue;
     private final int capacity;
-	private final Lock monitor;
-	private final Condition consumerCondition;
-	private final Condition producerCondition;
+    private final Lock monitor;
+    private final Condition consumerCondition;
+    private final Condition producerCondition;
 
     public MyBlockingQueueImpl(int capacity) {
         this.capacity = capacity;
-		this.queue = new LinkedList<>();
-		this.monitor = new ReentrantLock();
-		this.consumerCondition = monitor.newCondition();
-		this.producerCondition = monitor.newCondition();
+        this.queue = new LinkedList<>();
+        this.monitor = new ReentrantLock();
+        this.consumerCondition = monitor.newCondition();
+        this.producerCondition = monitor.newCondition();
     }
 
     public MyBlockingQueueImpl() {
@@ -269,7 +269,7 @@ public class MyBlockingQueueImpl<E> implements BlockingQueue<E> {
 
     private boolean timeWaiting(Condition consumerCondition, BooleanSupplier fitCondition, long timeout, TimeUnit unit) throws InterruptedException {
         long timeToWaitNanos = TimeUnit.valueOf(String.format("%s", unit)).toNanos(timeout);
-        while (! fitCondition.getAsBoolean()) {
+        while (!fitCondition.getAsBoolean()) {
             if (timeToWaitNanos <= 0) {
                 return false;
             }
