@@ -1,7 +1,7 @@
 package telran.guarded_blocks.tasks;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
 /**
@@ -9,7 +9,7 @@ import java.util.stream.Stream;
  */
 public class Barrier {
     private final int threadsCount;
-    private final Queue<Thread> queue = new ConcurrentLinkedQueue<>();
+    private final AtomicInteger count = new AtomicInteger(0);
 
     public Barrier(int threadsCount) {
         this.threadsCount = threadsCount;
@@ -21,19 +21,12 @@ public class Barrier {
      * and only when continues to run.
      */
     public synchronized void await() {
-        Thread current = Thread.currentThread();
         try {
-            if (queue.size() < threadsCount - 1) {
-                queue.add(current);
-                wait();
-            }
-        } catch (InterruptedException ignored) {
-        }
+            if (count.incrementAndGet() < threadsCount) wait();
+            else notifyAll();
+        } catch (InterruptedException ignored) {}
         finally {
-            notifyAll();
-            if (queue.size() == threadsCount) {
-                queue.clear();
-            }
+            count.compareAndSet(threadsCount, 0);
         }
     }
 
