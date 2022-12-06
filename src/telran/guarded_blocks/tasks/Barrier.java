@@ -23,16 +23,17 @@ public class Barrier {
     public synchronized void await() {
         Thread current = Thread.currentThread();
         try {
-            if (Thread.interrupted() && queue.contains(current)) {
-                queue.remove(current);
-            }
-            else if (queue.size() < threadsCount - 1) {
+            if (queue.size() < threadsCount - 1) {
                 queue.add(current);
                 wait();
-            } else notifyAll();
-        } catch (InterruptedException ignored) {}
-        if (queue.size() == threadsCount) {
-            queue.clear();
+            }
+        } catch (InterruptedException ignored) {
+        }
+        finally {
+            notifyAll();
+            if (queue.size() == threadsCount) {
+                queue.clear();
+            }
         }
     }
 
