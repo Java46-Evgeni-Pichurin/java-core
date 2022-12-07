@@ -26,7 +26,7 @@ public class Semaphore {
      * @throws InterruptedException
      */
     public synchronized void acquire() throws InterruptedException {
-        if (resourceCount - count.get() > 0) {
+        if (resourceCount > count.get()) {
             count.incrementAndGet();
         }
         else {
