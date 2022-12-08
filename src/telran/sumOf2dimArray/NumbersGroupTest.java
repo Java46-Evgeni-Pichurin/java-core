@@ -8,9 +8,9 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class NumbersGroupTest {
-    private static final int N_GROUPS = 800;
-    private static final int N_NUMBERS_IN_GROUP = 600;
-    private final int MAX_RANDOM_VALUE = 1_000_000;
+    private static final int N_GROUPS = 10_000;
+    private static final int N_NUMBERS_IN_GROUP = 10_000;
+    private final int MAX_RANDOM_VALUE = 100_000;
 
     int[][] smallArray = {
             {1, 2, 3},
@@ -32,11 +32,54 @@ public class NumbersGroupTest {
     @Test
     void performanceTest() {
         int[][] largeArray = getGroups(N_GROUPS, N_NUMBERS_IN_GROUP);
+        NumberGroups numberGroups = new NumberGroups(largeArray);
+        numberGroups.setnThreads(1);
         assertEquals(
                 Arrays.stream(flattenArray(largeArray))
                         .asLongStream()
                         .sum(),
-                new NumberGroups(largeArray).computeSum()
+                numberGroups.computeSum()
+        );
+
+        numberGroups.setnThreads(5);
+        assertEquals(
+                Arrays.stream(flattenArray(largeArray))
+                        .asLongStream()
+                        .sum(),
+                numberGroups.computeSum()
+        );
+
+        numberGroups.setnThreads(10);
+        assertEquals(
+                Arrays.stream(flattenArray(largeArray))
+                        .asLongStream()
+                        .sum(),
+                numberGroups.computeSum()
+        );
+
+        numberGroups.setnThreads(20);
+        assertEquals(
+                Arrays.stream(flattenArray(largeArray))
+                        .asLongStream()
+                        .sum(),
+                numberGroups.computeSum()
+        );
+
+        numberGroups.setnThreads(40);
+        assertEquals(
+                Arrays.stream(flattenArray(largeArray))
+                        .asLongStream()
+                        .sum(),
+                numberGroups.computeSum()
+        );
+
+
+        numberGroups.setnThreads(100);
+        assertEquals(
+                Arrays.stream(flattenArray(largeArray))
+                        .asLongStream()
+                        .sum(),
+                numberGroups.computeSum()
         );
     }
 
