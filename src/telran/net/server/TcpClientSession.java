@@ -37,7 +37,7 @@ public class TcpClientSession implements Runnable {
                 output.reset();
             } catch (SocketTimeoutException e) {
                 if ((idlePeriod += CLIENT_TIMEOUT) == CLIENT_IDLE_TIMEOUT) {
-                    System.out.println("Client connection closed by time out");
+                    System.out.println("Client connection closed by time out for " + socket.getRemoteSocketAddress());
                     try {
                         socket.close();
                     } catch (IOException ioe) {}
@@ -52,7 +52,7 @@ public class TcpClientSession implements Runnable {
             }
         }
         if (tcpServer.isShutdown) {
-            System.out.println("Client connection closed by server shutdown");
+            System.out.println("Client connection closed by server shutdown for " + socket.getRemoteSocketAddress());
             try {
                 socket.close();
             } catch (IOException ioe) {}
