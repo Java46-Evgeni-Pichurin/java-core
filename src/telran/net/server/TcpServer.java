@@ -20,7 +20,7 @@ public class TcpServer implements Runnable {
         this.port = port;
         this.protocol = protocol;
         serverSocket = new ServerSocket(port);
-        BlockingQueue<Runnable> workQueue = new LinkedBlockingQueue<>();
+        BlockingQueue<Runnable> workQueue = new LinkedBlockingQueue<>(MAX_POOL_SIZE);
         executor = new ThreadPoolExecutor(MIN_POOL_SIZE, MAX_POOL_SIZE, ALIVE_TIME, TimeUnit.SECONDS, workQueue);
         serverSocket.setSoTimeout(ACCEPT_TIME_OUT);
     }
