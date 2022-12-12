@@ -9,7 +9,7 @@ import java.io.*;
 
 public class TcpClientSession implements Runnable {
     private static final int CLIENT_TIMEOUT = 1_000;
-    private final int CLIENT_IDLE_TIMEOUT = 20_000;
+    private static final int CLIENT_IDLE_TIMEOUT = 20_000;
     private final Socket socket;
     private final ObjectInputStream input;
     private final ObjectOutputStream output;
@@ -36,7 +36,8 @@ public class TcpClientSession implements Runnable {
                 output.writeObject(response);
                 output.reset();
             } catch (SocketTimeoutException e) {
-                if ((idlePeriod += CLIENT_TIMEOUT) == CLIENT_IDLE_TIMEOUT) {
+                if ((idlePeriod += CLIENT_TIMEOUT) == CLIENT_IDLE_TIMEOUT &&
+                    tcpServer.threadCount.get() > tcpServer.executor.getLargestPoolSize()) {
                     System.out.println("Client connection closed by time out for " + socket.getRemoteSocketAddress());
                     try {
                         socket.close();
@@ -57,5 +58,7 @@ public class TcpClientSession implements Runnable {
                 socket.close();
             } catch (IOException ioe) {}
         }
+        tcpServer.threadCount.decrementAndGet();
+        System.out.println("Current number of threads: " + tcpServer.threadCount.get());
     }
 }
