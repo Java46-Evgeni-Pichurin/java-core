@@ -59,6 +59,5 @@ public class TcpClientSession implements Runnable {
             } catch (IOException ioe) {}
         }
         tcpServer.threadCount.decrementAndGet();
-        System.out.println("Current number of threads: " + tcpServer.threadCount.get());
     }
 }
