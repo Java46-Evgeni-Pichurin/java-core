@@ -37,7 +37,7 @@ public class TcpServer implements Runnable {
                 threadCount.incrementAndGet();
                 System.out.println("Accept client: " + socket.getRemoteSocketAddress());
                 TcpClientSession clientServer = new TcpClientSession(socket, protocol, this);
-                executor.allowCoreThreadTimeOut(true);
+                //executor.allowCoreThreadTimeOut(true);
                 executor.execute(clientServer);
             } catch (SocketTimeoutException e) {
 
