@@ -36,12 +36,8 @@ public class TcpClientSession implements Runnable {
                 output.writeObject(response);
                 output.reset();
             } catch (SocketTimeoutException e) {
-                if ((idlePeriod += CLIENT_TIMEOUT) == CLIENT_IDLE_TIMEOUT &&
-                    tcpServer.threadCount.get() > tcpServer.executor.getLargestPoolSize()) {
-                    System.out.println("Client connection closed by time out for " + socket.getRemoteSocketAddress());
-                    try {
-                        socket.close();
-                    } catch (IOException ioe) {}
+                if ((idlePeriod += CLIENT_TIMEOUT) > CLIENT_IDLE_TIMEOUT &&
+                        tcpServer.threadCount.get() > tcpServer.executor.getLargestPoolSize()) {
                     break;
                 }
             } catch (EOFException e) {
@@ -52,11 +48,16 @@ public class TcpClientSession implements Runnable {
                 break;
             }
         }
-        if (tcpServer.isShutdown) {
-            System.out.println("Client connection closed by server shutdown for " + socket.getRemoteSocketAddress());
+        if (tcpServer.isShutdown | idlePeriod > CLIENT_IDLE_TIMEOUT) {
             try {
                 socket.close();
-            } catch (IOException ioe) {}
+            } catch (IOException ioe) {
+            }
+            if (tcpServer.isShutdown) {
+                System.out.println("Client connection closed by server shutdown for " + socket.getRemoteSocketAddress());
+            } else {
+                System.out.println("Client connection closed due to Idle timeout for " + socket.getRemoteSocketAddress());
+            }
         }
         tcpServer.threadCount.decrementAndGet();
     }
