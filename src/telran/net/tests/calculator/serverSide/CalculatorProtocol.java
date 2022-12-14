@@ -17,7 +17,6 @@ public class CalculatorProtocol implements ApplProtocol {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public Response getResponse(Request request) {
         Response response;
         try {
