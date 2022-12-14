@@ -1,19 +1,21 @@
-package telran.messages.test;
+package telran.view.app;
 
-import telran.view.ConsoleInputOutput;
-import telran.view.Item;
+import telran.view.*;
+import telran.view.menu.DateOperationsMenu;
 import telran.view.menu.Menu;
+import telran.view.menu.NumbersOperationsMenu;
 
-public class MessageSenderApplication {
-
+public class MenuApp {
     public static void main(String[] args) {
         Menu menu = new Menu("Main menu", getItems());
         menu.perform(new ConsoleInputOutput());
+
     }
 
     private static Item[] getItems() {
         return new Item[]{
-                Item.of("Send message", Sender::send),
+                NumbersOperationsMenu.getNumbersOperationsMenu(),
+                DateOperationsMenu.getDateOperationsMenu(),
                 Item.exit("Exit")
         };
     }
