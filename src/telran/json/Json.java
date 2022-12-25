@@ -20,6 +20,8 @@ import java.util.function.Function;
 public class Json {
     static Map<Class<?>, Function<String, ?>> parsersByType = new IdentityHashMap<>();
 
+    private static final String STANDARD_FORMAT = "dd/MM/yyyy";
+
     static {
         parsersByType.put(byte.class, Byte::parseByte);
         parsersByType.put(Byte.class, Byte::parseByte);
@@ -40,7 +42,7 @@ public class Json {
 
         parsersByType.put(String.class, Function.identity());
 
-        parsersByType.put(LocalDate.class, v -> LocalDate.parse(v, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        parsersByType.put(LocalDate.class, v -> LocalDate.parse(v, DateTimeFormatter.ofPattern(STANDARD_FORMAT)));
     }
 
     public <T> T parse(String json, Class<T> type) throws Exception {
@@ -95,7 +97,6 @@ public class Json {
             Field field = objType.getDeclaredFields()[parsedFields];
             String realFieldName = field.getName();
             String givenFieldName = stripQuotes(key);
-            System.out.println(realFieldName + " " + givenFieldName);
             if (!givenFieldName.equals(realFieldName)) {
                 for (Annotation annotation : field.getAnnotations()) {
                     if (annotation instanceof JsonField) {
@@ -107,8 +108,7 @@ public class Json {
             if (field.getType().equals(LocalDate.class)) {
                 JsonFormat format = field.getAnnotation(JsonFormat.class);
                 if (format != null) {
-                    System.out.println(format.value());
-                    parsersByType.put(LocalDate.class, v -> LocalDate.parse(v, DateTimeFormatter.ofPattern(format.value())));
+                    //TODO
                 }
                 break;
             }
